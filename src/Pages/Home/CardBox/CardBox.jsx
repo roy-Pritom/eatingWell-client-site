@@ -1,18 +1,17 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-const CardBox = () => {
+const CardBox = ({data}) => {
+    const {id,likes,name,years_of_experience,img_url}=data;
     return (
-        <div>
-             <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+        <div className='col col-4'>
+             <Card style={{ width: '23rem' }}>
+      <Card.Img variant="top" src={img_url} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Title className='fw-bold'>{name}</Card.Title>
+        <p className='text-dark m-0 p-0'>Years of experience :{years_of_experience}</p>
+          <p className='text-dark mt-2'>Likes : {likes}</p>
+        <Button variant="warning fw-semibold ">View Recipes Button</Button>
       </Card.Body>
     </Card>
         </div>
