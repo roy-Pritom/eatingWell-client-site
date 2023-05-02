@@ -8,7 +8,7 @@ const Banner = () => {
                  <img src="https://img.freepik.com/free-photo/chef-pointing-lateral-white-background_1368-2826.jpg?w=740&t=st=1682957607~exp=1682958207~hmac=281acea4296554b0b48beee0873c8cb0991a92ded15406bd81665adb031de1fe" className='img'  style={{height:"500px"}} alt="" />
             </div>
             <div className="">
-               <h2 className='fw-bold' style={{fontSize:"70px"}}>One Step <br /> Closer To Your <br /> <span className='text-primary'>Dream Job </span>  </h2>
+               <h2 className='fw-bold fs-2' >Your diet is a bank account <span className='text-primary'>Good food</span> <br /> choices are good investments<br /></h2>
                <p className='fs-5'>everyday recipes with ratings and reviews by home cooks like you. find easy dinner ideas, healthy recipes, plus helpful cooking tips and techniques.</p>
                <button className='btn btn-warning px-4 py-2 fw-bold mt-2'>Explore <FaArrowRight></FaArrowRight> </button>
             </div>

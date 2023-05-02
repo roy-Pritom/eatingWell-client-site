@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from 'react-router-dom';
+import { authContext } from '../../../Provider/AuthProvider';
 // import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Header = () => {
+    const {user,logOut}=useContext(authContext)
     return (
         <div>
             <Navbar bg="light " expand="lg">
@@ -26,9 +28,17 @@ const Header = () => {
                             Blogs
                         </NavLink>
                            
-                           <NavLink to='/pto' className='text-decoration-none'>
-                           Profile
-                           </NavLink>
+                 
+                              {user ? <div className="">
+                              <button className='btn btn-primary' onClick={logOut}>Logout</button>
+
+                              </div>
+                              :
+                              <Link to='/login' className='text-decoration-none'>
+                              <button className='btn btn-primary'>Login</button>
+                              </Link>
+                              }
+                 
                            
                         </Nav>
                       
