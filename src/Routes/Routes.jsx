@@ -3,7 +3,7 @@ import {
   } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
-import Recipe from "../Pages/Recipe/Recipe";
+import Recipe from "../Pages/RecipePage/RecipePage";
 
 
 

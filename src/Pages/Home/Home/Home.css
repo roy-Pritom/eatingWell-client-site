@@ -8,3 +8,11 @@
     height: 100%;
   }
 }
+
+.cart-container{
+  position: relative;
+}
+.favorite-btn{
+  position: absolute;
+  bottom:5px;
+}
