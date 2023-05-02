@@ -19,3 +19,11 @@
 .nav-bar a.active{
   color: red;
 }
+.offerCard{
+  position: relative;
+}
+.offer-img{
+  position: absolute;
+  top: 0;
+  right: 0;
+}

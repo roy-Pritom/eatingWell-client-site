@@ -38,7 +38,7 @@ const RecipePage = () => {
         </Card.Body>
       </Card>
       <div className="container">
-        <h2 className='text-center fs-2 fw-bold mb-5'>Recipes</h2>
+        <h2 className='text-center fs-2 fw-bold mb-5'>Hottest Recipes at Food & Taste</h2>
         <div className="row g-5 mx-auto ">
           {
             recipes.map(recipe=><RecipeCard

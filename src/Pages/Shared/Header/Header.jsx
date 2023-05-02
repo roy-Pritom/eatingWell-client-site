@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from 'react-router-dom';
 import { authContext } from '../../../Provider/AuthProvider';
-// import ActiveLink from '../../../ActiveLink/ActiveLink';
+
 
 const Header = () => {
     const {user,logOut}=useContext(authContext)
@@ -29,13 +29,14 @@ const Header = () => {
                         </NavLink>
                            
                  
-                              {user ? <div className="">
-                              <button className='btn btn-primary' onClick={logOut}>Logout</button>
+                              {user ? <div className="d-flex gap-3 " >
+                                <img src={user?.photoURL} className='rounded-circle' style={{width:"40px",height:"40px"}} alt="" />
+                              <button className='btn btn-success text-white fw-bold' onClick={logOut}>Logout</button>
 
                               </div>
                               :
                               <Link to='/login' className='text-decoration-none'>
-                              <button className='btn btn-primary'>Login</button>
+                              <button className='btn btn-success text-white fw-bold'>Login</button>
                               </Link>
                               }
                  
