@@ -16,3 +16,6 @@
   position: absolute;
   bottom:5px;
 }
+.nav-bar a.active{
+  color: red;
+}
