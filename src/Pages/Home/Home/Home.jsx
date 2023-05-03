@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
@@ -9,44 +8,45 @@ import { Spinner } from 'react-bootstrap';
 import ChefCard from '../ChefCard/ChefCard';
 
 const Home = () => {
-  const navigation=useNavigation();
-  if(navigation.state==='loading')
-  {
-    return <Spinner animation="border" role="status">
-    <span className="visually-hidden">Loading...</span>
-  </Spinner>
+  const navigation = useNavigation();
+  if (navigation.state === 'loading') {
+    return <div className="d-flex justify-content-center mt-5">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
   }
-const chefData=useLoaderData();
-// console.log(chefData)
-    return (
-        <div className='container'>
-          <div className="">
-          <Banner></Banner>
-          </div>
-          <div className="" style={{marginTop:"100px"}}>
-            <h1 className='text-center fw-bold fs-1 text-success mt-5'>Meet Our Chefs</h1>
-            <Marquee speed={100}>
-            <p className='mt-3 text-center fs-5 text-success fw-semibold  '>Need some help deciding what to choose? Take a look at our most popular recipes or check out the latest dishes we’ve added to the site.</p>
-            </Marquee>
-          <div className="row g-4 py-5 mx-auto cart" >
-                {
-              chefData.map(data=><ChefCard
+  const chefData = useLoaderData();
+  // console.log(chefData)
+  return (
+    <div className='container'>
+      <div className="">
+        <Banner></Banner>
+      </div>
+      <div className="" style={{ marginTop: "100px" }}>
+        <h1 className='text-center fw-bold fs-1 text-success mt-5'>Meet Our Chefs</h1>
+        <Marquee speed={100}>
+          <p className='mt-3 text-center fs-5 text-success fw-semibold  '>Need some help deciding what to choose? Take a look at our most popular recipes or check out the latest dishes we have added to the site.</p>
+        </Marquee>
+        <div className="row g-4 py-5 mx-auto cart" >
+          {
+            chefData.map(data => <ChefCard
               data={data}
               key={data.id}
-              ></ChefCard>)
-                }
-            </div>
-          </div>
-          <div className="my-5 py-5">
-            <h2 className='fw-bold fs-1 text-success text-center'>Hot Deals</h2>
-            <OfferCard></OfferCard>
-          </div>
-          <div className="mt-3 mb-5 pb-3">
-            <h2  className='fw-bold fs-1 text-success text-center mb-5'>Latest News from Food & Taste</h2>
-            <LatestNews></LatestNews>
-          </div>
+            ></ChefCard>)
+          }
         </div>
-    );
+      </div>
+      <div className="my-5 py-5">
+        <h2 className='fw-bold fs-1 text-success text-center'>Hot Deals</h2>
+        <OfferCard></OfferCard>
+      </div>
+      <div className="mt-3 mb-5 pb-3">
+        <h2 className='fw-bold fs-1 text-success text-center mb-5'>Latest News from Food & Taste</h2>
+        <LatestNews></LatestNews>
+      </div>
+    </div>
+  );
 };
 
 export default Home;

@@ -8,6 +8,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Blog from "../Pages/Blog/Blog";
 
 
 
@@ -20,12 +21,12 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('https://assignment-10-server-site-nu.vercel.app/data/')
+            loader:()=>fetch('https://assignment-10-server-site-roy-pritom.vercel.app/data/')
         },
         {
           path:'/recipes/:id',
           element:<PrivateRoute><Recipe></Recipe></PrivateRoute>,
-          loader:({params})=>fetch(`https://assignment-10-server-site-nu.vercel.app/data/${params.id}`)
+          loader:({params})=>fetch(`https://assignment-10-server-site-roy-pritom.vercel.app/data/${params.id}`)
         },
         {
           path:'/login',
@@ -34,6 +35,10 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         {
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/blogs',
+          element:<Blog></Blog>
         }
        
       ]

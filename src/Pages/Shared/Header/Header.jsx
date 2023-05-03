@@ -14,7 +14,7 @@ const Header = () => {
         <div>
             <Navbar bg="light " expand="lg">
                 <Container fluid className='mx-5'>
-                    <Navbar.Brand href="#" className='fw-bold text-black fs-4'>eatingwell.com</Navbar.Brand>
+                    <Navbar.Brand className='fw-bold text-black fs-4'>eatingwell.com</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" >
                         <Nav
@@ -22,7 +22,8 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <NavLink to='/'className='text-decoration-none '
+                
+                            <NavLink to='/'className='text-decoration-none'
                             >
                             Home
                             </NavLink>

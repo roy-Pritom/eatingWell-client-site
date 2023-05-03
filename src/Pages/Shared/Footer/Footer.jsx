@@ -53,7 +53,7 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <p>
               123 Main Street<br />
-              Anytown, USA 12345<br />
+              Kolkata, INDIA 12345<br />
               info@chefsdelight.com<br />
               (555) 555-5555
             </p>

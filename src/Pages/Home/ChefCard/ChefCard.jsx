@@ -9,7 +9,7 @@ const ChefCard = ({data}) => {
     const {id,likes,name,years_of_experience,img_url,number_of_recipe}=data;
     return (
         <div className='col col-md-4 col-12'>
-             <Card >
+             <Card className=''>
       <Card.Img variant="top" src={img_url} style={{height:"250px"}} />
       <Card.Body>
         <Card.Title className='fw-bold fs-4'>{name}</Card.Title>

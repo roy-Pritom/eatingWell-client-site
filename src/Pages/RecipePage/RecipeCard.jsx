@@ -14,7 +14,7 @@ const RecipeCard = ({ recipeData }) => {
     }
     return (
         <div className='col col-md-4 col-12 py-5'>
-            <Card style={{ height: "730px" }}>
+            <Card style={{ height: "780px" }} className='recipe-card'>
                 <Card.Img variant="top" src={food_img} style={{ height: "200px", width: "100%" }} />
                 <Card.Body className='cart-container'>
                     <Card.Title className='fs-4 fw-semibold'>{food_name}</Card.Title>

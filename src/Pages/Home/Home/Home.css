@@ -13,7 +13,7 @@
 }
 .favorite-btn{
   position: absolute;
-  bottom:5px;
+  bottom:0;
 }
 .nav-bar a.active{
   color: red;

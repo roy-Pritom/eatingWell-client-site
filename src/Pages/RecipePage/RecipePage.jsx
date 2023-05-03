@@ -22,7 +22,7 @@ const RecipePage = () => {
       
           <h2 className='text-center fw-bold fs-1 my-3'>{name}</h2>
           <p className=' '>{bio}</p>
-          <div className=" d-flex gap-5"style={{color:"#787885",fontWeight:"700", fontSize:"14px"}}>
+          <div className=" d-flex gap-md-5 flex-md-row flex-column"style={{color:"#787885",fontWeight:"700", fontSize:"14px"}}>
           <p className=' d-flex gap-2 align-items-center'>Likes : {likes}<FontAwesomeIcon icon={faThumbsUp} className='text-primary'  /> </p>
           <p>years of experience : {years_of_experience}</p>
           <p>Number of recipe : {number_of_recipe}</p>
