@@ -13,7 +13,7 @@ const RecipeCard = ({ recipeData }) => {
         setFavorite(true)
     }
     return (
-        <div className='col col-md-4 col-12 py-5'>
+        <div className='col col-md-4 col-12 '>
             <Card style={{ height: "780px" }} className='recipe-card'>
                 <Card.Img variant="top" src={food_img} style={{ height: "200px", width: "100%" }} />
                 <Card.Body className='cart-container'>

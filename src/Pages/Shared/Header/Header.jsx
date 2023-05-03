@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import { authContext } from '../../../Provider/AuthProvider';
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -10,6 +10,8 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Header = () => {
     const {user,logOut}=useContext(authContext)
+    console.log({user});
+
     return (
         <div>
             <Navbar bg="light " expand="lg">
