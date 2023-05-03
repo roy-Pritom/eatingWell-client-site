@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from 'react-router-dom';
 import { authContext } from '../../../Provider/AuthProvider';
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 
 const Header = () => {
@@ -30,7 +32,8 @@ const Header = () => {
                            
                  
                               {user ? <div className="d-flex gap-3 " >
-                                <img src={user?.photoURL} className='rounded-circle' style={{width:"40px",height:"40px"}} alt="" />
+                                <img id='title' src={user?.photoURL} className='rounded-circle' style={{width:"40px",height:"40px"}} alt="" />
+                                <ReactTooltip anchorId='title' place='bottom' content={user?.displayName}></ReactTooltip>
                               <button className='btn btn-success text-white fw-bold' onClick={logOut}>Logout</button>
 
                               </div>

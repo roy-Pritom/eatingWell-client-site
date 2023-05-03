@@ -75,10 +75,10 @@ const Login = () => {
        <div className="mt-2">
         <p><small>Dont't have an account? Please <Link to='/register'>Register</Link> </small></p>
        </div>
-      <Form.Text className="text-muted text-success">
+      <Form.Text className=" text-success">
           {success}
         </Form.Text>
-      <Form.Text className="text-muted text-danger">
+      <Form.Text className=" text-danger">
           {error}
         </Form.Text>
         </div>

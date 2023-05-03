@@ -30,25 +30,25 @@ const Register = () => {
         const password = form.password.value;
         const photoUrl = form.url.value;
         console.log(photoUrl, email, password)
-        // if (password.length < 8) {
-        //     setError('Password should be 8 character');
-        //     return ;
-        // }
-        // else if(!/(?=.*[0-9].*[0-9])/.test(password))
-        // {
-        //     setError('Password should have at least two number');
-        //     return ;
-        // }
-        // else if(!/(?=.*[A-Z])/.test(password))
-        // {
-        //     setError('Password should have at least one upperCase');
-        //     return ;
-        // }
-        // else if(!/(?=.*[a-z])/.test(password))
-        // {
-        //     setError('Password should have at least one lowerCase');
-        //     return ;
-        // }
+        if (password.length < 6) {
+            setError('Password should be 8 character');
+            return ;
+        }
+        else if(!/(?=.*[0-9].*[0-9])/.test(password))
+        {
+            setError('Password should have at least two number');
+            return ;
+        }
+        else if(!/(?=.*[A-Z])/.test(password))
+        {
+            setError('Password should have at least one upperCase');
+            return ;
+        }
+        else if(!/(?=.*[a-z])/.test(password))
+        {
+            setError('Password should have at least one lowerCase');
+            return ;
+        }
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -120,12 +120,12 @@ const Register = () => {
             <div className="">
                 <p><small>Already have an account? Please <Link to='/login'>Login</Link> </small></p>
             </div>
-            <Form.Text className="text-muted text-success">
+            <p className=" text-success">
                 {success}
-            </Form.Text>
-            <Form.Text className="text-muted text-danger">
+            </p>
+            <p className="text-danger">
                 {error}
-            </Form.Text>
+            </p>
         </div>
         <div className="d-flex gap-4 mt-2 justify-content-center">
             <hr className='w-25' />or <hr className='w-25' />
