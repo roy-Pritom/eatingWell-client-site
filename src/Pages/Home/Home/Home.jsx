@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import { useLoaderData, useNavigation } from 'react-router-dom';
-import CardBox from '../CardBox/CardBox';
 import Marquee from "react-fast-marquee";
 import './Home.css'
 import OfferCard from '../OfferCard/OfferCard';
 import LatestNews from '../LatestNews/LatestNews';
 import { Spinner } from 'react-bootstrap';
+import ChefCard from '../ChefCard/ChefCard';
 
 const Home = () => {
   const navigation=useNavigation();
@@ -30,10 +30,10 @@ const chefData=useLoaderData();
             </Marquee>
           <div className="row g-4 py-5 mx-auto cart" >
                 {
-              chefData.map(data=><CardBox
+              chefData.map(data=><ChefCard
               data={data}
               key={data.id}
-              ></CardBox>)
+              ></ChefCard>)
                 }
             </div>
           </div>

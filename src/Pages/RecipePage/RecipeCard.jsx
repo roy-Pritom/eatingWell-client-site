@@ -8,8 +8,8 @@ const RecipeCard = ({ recipeData }) => {
     const [favorite, setFavorite] = useState(false);
     const { _id, food_name, food_img, method, Ingredients, rating,number_of_recipe } = recipeData;
     const handleFavoriteBtn = () => {
-        toast.success('items added');
-        // document.getElementById('favorite-btn').style.color='red'
+        toast.success('items added to favorite');
+
         setFavorite(true)
     }
     return (

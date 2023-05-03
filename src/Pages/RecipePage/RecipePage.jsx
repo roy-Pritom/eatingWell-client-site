@@ -2,7 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import RecipeCard from './RecipeCard';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -21,8 +22,8 @@ const RecipePage = () => {
       
           <h2 className='text-center fw-bold fs-1 my-3'>{name}</h2>
           <p className=' '>{bio}</p>
-          <div className=" d-flex gap-5">
-          <p>Likes : {likes}</p>
+          <div className=" d-flex gap-5"style={{color:"#787885",fontWeight:"700", fontSize:"14px"}}>
+          <p className=' d-flex gap-2 align-items-center'>Likes : {likes}<FontAwesomeIcon icon={faThumbsUp} className='text-primary'  /> </p>
           <p>years of experience : {years_of_experience}</p>
           <p>Number of recipe : {number_of_recipe}</p>
           </div>

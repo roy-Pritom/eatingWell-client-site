@@ -20,12 +20,12 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/data/')
+            loader:()=>fetch('https://assignment-10-server-site-nu.vercel.app/data/')
         },
         {
           path:'/recipes/:id',
           element:<PrivateRoute><Recipe></Recipe></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/data/${params.id}`)
+          loader:({params})=>fetch(`https://assignment-10-server-site-nu.vercel.app/data/${params.id}`)
         },
         {
           path:'/login',

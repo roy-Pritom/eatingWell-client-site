@@ -31,7 +31,7 @@ const Register = () => {
         const photoUrl = form.url.value;
         console.log(photoUrl, email, password)
         if (password.length < 6) {
-            setError('Password should be 8 character');
+            setError('Password should be 6 character');
             return ;
         }
         else if(!/(?=.*[0-9].*[0-9])/.test(password))
@@ -131,7 +131,7 @@ const Register = () => {
             <hr className='w-25' />or <hr className='w-25' />
         </div>
         <div className="d-flex justify-content-center mt-4 ">
-       <button type="button" class="btn btn-outline-primary w-75 d-flex gap-4 justify-content-center align-items-center" onClick={loginWithGoogle} >
+       <button type="button" className="btn btn-outline-primary w-75 d-flex gap-4 justify-content-center align-items-center" onClick={loginWithGoogle} >
        <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png?w=740&t=st=1683030098~exp=1683030698~hmac=a172fbf96bc191335562a518ae58b3fe0d5807cd0aa88a9835adf20c6d03047b" style={{width:"40px",height:"40px"}} alt="" />
        Continue with Google
 
@@ -139,7 +139,7 @@ const Register = () => {
       
        </div>
        <div className="d-flex justify-content-center mt-4 ">
-       <button type="button" class="btn btn-outline-primary w-75 d-flex gap-4 justify-content-center align-items-center" >
+       <button type="button" className="btn btn-outline-primary w-75 d-flex gap-4 justify-content-center align-items-center" >
        <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png?w=740&t=st=1683032868~exp=1683033468~hmac=f8415bbd3b9f44c83a6fc67837cddfa6e2ffcae53ccc7cc709f64b9664d7b433" style={{width:"40px",height:"40px"}} alt="" />
        Continue with Github
 
