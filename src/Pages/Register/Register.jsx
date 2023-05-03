@@ -11,7 +11,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
 
-    const { createUser,googleLogin } = useContext(authContext)
+    const { createUser, googleLogin, logOut, gitHubLogIn } = useContext(authContext)
     const navigate = useNavigate();
 
     const handleSignUp = (event) => {
@@ -29,18 +29,15 @@ const Register = () => {
             setError('Password should be 6 character');
             return;
         }
-        else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
-            setError('Password should have at least two number');
+        else if (!/(?=.*[0-9])/.test(password)) {
+            setError('Password should have at least one number');
             return;
         }
         else if (!/(?=.*[A-Z])/.test(password)) {
             setError('Password should have at least one upperCase');
             return;
         }
-        else if (!/(?=.*[a-z])/.test(password)) {
-            setError('Password should have at least one lowerCase');
-            return;
-        }
+
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -48,7 +45,8 @@ const Register = () => {
                 setSuccess('Successfully register')
                 updateUserProfile(loggedUser, name, photoUrl)
                 form.reset();
-                navigate('/')
+                logOut();
+                navigate('/login')
             })
             .catch(error => {
                 setError(error.message)
@@ -57,6 +55,7 @@ const Register = () => {
     const handleTerms = (event) => {
         setAccepted(event.target.checked)
     }
+
     const updateUserProfile = (currentUser, name, photoUrl) => {
         updateProfile(currentUser,
             {
@@ -70,6 +69,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 setSuccess('Successfully login')
+                navigate('/')
 
             })
             .catch(error => {
@@ -77,6 +77,24 @@ const Register = () => {
             })
 
     }
+
+    const loginWithGitHub = () => {
+        setSuccess('')
+        setError('')
+        gitHubLogIn()
+            .then(result => {
+                const loggedUser = result.user;
+                setSuccess('Successfully login')
+                navigate('/')
+
+
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+
+    }
+
     return (
         <div className='mb-5 pb-5 w-75 mx-auto'>
             <div className='mx-auto my-5 py-5   border border-2 px-4 py-5'>
@@ -132,7 +150,7 @@ const Register = () => {
 
             </div>
             <div className="d-flex justify-content-center mt-4 ">
-                <button type="button" className="btn btn-outline-primary w-75 d-flex gap-4 justify-content-center align-items-center" >
+                <button type="button" className="btn btn-outline-primary w-75 d-flex gap-4 justify-content-center align-items-center" onClick={loginWithGitHub} >
                     <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png?w=740&t=st=1683032868~exp=1683033468~hmac=f8415bbd3b9f44c83a6fc67837cddfa6e2ffcae53ccc7cc709f64b9664d7b433" style={{ width: "40px", height: "40px" }} alt="" />
                     Continue with Github
 

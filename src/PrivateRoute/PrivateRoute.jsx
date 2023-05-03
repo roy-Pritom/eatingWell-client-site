@@ -4,24 +4,22 @@ import { Navigate, useLocation } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 
 
-const PrivateRoute = ({children}) => {
-    const {user,loading}=useContext(authContext);
-    const location=useLocation();
+const PrivateRoute = ({ children }) => {
+    const { user, loading } = useContext(authContext);
+    const location = useLocation();
     // console.log(location)
-    if(loading)
-    {
-        return( <div className="d-flex justify-content-center mt-5">
+    if (loading) {
+        return (<div className="d-flex justify-content-center mt-5">
             <Spinner animation="border" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
         </div>)
     }
-    if(user)
-    {
+    if (user) {
         return children
     }
     return (
-       <Navigate to='/login' state={{ from: location }} replace></Navigate>
+        <Navigate to='/login' state={{ from: location }} replace></Navigate>
     );
 };
 
