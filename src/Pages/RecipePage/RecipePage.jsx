@@ -10,14 +10,14 @@ import LazyLoad from 'react-lazy-load';
 
 const RecipePage = () => {
   const data = useLoaderData();
-  console.log(data);
+
   const { recipes, name, years_of_experience, img_url, bio, likes, number_of_recipe } = data;
 
   return (
     <div className='mb-5'>
       <Card className='container my-5 py-5 px-4  ' style={{ backgroundColor: "#F3F3F3" }}>
         <div className="d-flex justify-content-center">
-          <LazyLoad height={270} width={400} threshold={0.99} onContentVisible={() => { console.log('loaded!') }}>
+          <LazyLoad height={270}  threshold={0.99} onContentVisible={() => { console.log('loaded!') }}>
             <Card.Img variant="top" src={img_url} style={{ width: "400px", height: "270px" }} />
 
           </LazyLoad>

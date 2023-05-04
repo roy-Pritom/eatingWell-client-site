@@ -29,9 +29,7 @@ const Blog = () => {
                 </div>
                 <div className="mt-3">
                     <h5 className='fw-bold'>How to validate React props using PropTypes?</h5>
-                    <p > <span className='text-success'><FaArrowRight></FaArrowRight></span> In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
-                        Controlled component Code Complexity is less complex and uncontrolled component Code Complexity is more complex.Controlled component Data flows from parent component to component and uncontrolled component Data flows within the component.
-
+                    <p > <span className='text-success'><FaArrowRight></FaArrowRight></span> React provides a library called PropTypes, which allows you to validate the props passed to a component. PropTypes can help you catch bugs early and ensure that the props you're receiving are of the expected type.To use PropTypes, first install pro types package.Then import PropTypes from 'prop-types'.Define the PropTypes for each prop in your component by adding a propTypes property to your component class or function.
                     </p>
                 </div>
                 <div className="mt-3">

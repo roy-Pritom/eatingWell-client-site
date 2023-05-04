@@ -12,8 +12,8 @@ const ChefCard = ({ data }) => {
     return (
         <div className='col col-md-4 col-12'>
             <Card className=''>
-                <LazyLoad height={250} width={406.388} threshold={0.99} onContentVisible={() => { console.log('loaded!') }}>
-                    <Card.Img variant="top" src={img_url} style={{ height: "250px" }} />
+                <LazyLoad  height={250}  threshold={0.99} onContentVisible={() => { console.log('loaded!') }}>
+                    <Card.Img variant="top"  src={img_url} style={{ height: "250px" }} />
 
                 </LazyLoad>
 

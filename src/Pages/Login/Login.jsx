@@ -12,7 +12,8 @@ const Login = () => {
     //    console.log(from)
 
     const navigate = useNavigate()
-    const { logIn, googleLogin,gitHubLogIn} = useContext(authContext)
+    const { logIn, googleLogin,gitHubLogIn,user} = useContext(authContext)
+    console.log({user})
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -70,8 +71,8 @@ const Login = () => {
     }
     return (
 
-        <div className='mx-auto my-5 w-50'>
-            <div className='border border-2 p-4'>
+        <div className='mx-auto my-5 ' style={{width:"400px"}}>
+            <div className='border border-2 p-4 shadow-lg'>
                 <h2 className='text-center fw-bold '>Please Login!!</h2>
                 <Form onSubmit={handleLogin}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

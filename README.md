@@ -13,4 +13,4 @@
 ## **_Everyone can easily use this site and see delicious foods recipe_**
 ---
 # Live Site Link :
-### https://deft-queijadas-537ab6.netlify.app/
+### https://assignment-10-client-sit-56dce.web.app

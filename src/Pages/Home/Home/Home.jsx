@@ -37,7 +37,7 @@ const Home = () => {
           }
         </div>
       </div>
-      <div className="my-5 py-5">
+      <div className="my-md-5 my-3 py-md-5">
         <h2 className='fw-bold fs-1 text-success text-center'>Hot Deals</h2>
         <OfferCard></OfferCard>
       </div>

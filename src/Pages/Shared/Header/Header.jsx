@@ -10,7 +10,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Header = () => {
     const { user, logOut } = useContext(authContext)
-    console.log({ user });
+
 
     return (
         <div>

@@ -10,7 +10,6 @@ const Register = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
-
     const { createUser, googleLogin, logOut, gitHubLogIn } = useContext(authContext)
     const navigate = useNavigate();
 
@@ -47,6 +46,7 @@ const Register = () => {
                 form.reset();
                 logOut();
                 navigate('/login')
+
             })
             .catch(error => {
                 setError(error.message)
@@ -70,7 +70,6 @@ const Register = () => {
                 const loggedUser = result.user;
                 setSuccess('Successfully login')
                 navigate('/')
-
             })
             .catch(error => {
                 setError(error.message)
@@ -87,7 +86,6 @@ const Register = () => {
                 setSuccess('Successfully login')
                 navigate('/')
 
-
             })
             .catch(error => {
                 setError(error.message)
@@ -96,8 +94,8 @@ const Register = () => {
     }
 
     return (
-        <div className='mb-5 pb-5 w-75 mx-auto'>
-            <div className='mx-auto my-5 py-5   border border-2 px-4 py-5'>
+        <div className='mb-5 pb-5  mx-auto' style={{ width: "600px" }}>
+            <div className='mx-auto my-5 py-5   border border-2 px-4 py-5 shadow-lg'>
                 <h3 className=''>Register your account</h3>
                 <Form className='py-3' name='form' onSubmit={handleSignUp}>
                     <Form.Group className="mb-3" controlId="formBasicName">
