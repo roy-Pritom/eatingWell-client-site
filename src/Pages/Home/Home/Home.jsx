@@ -1,5 +1,5 @@
 import Banner from '../Banner/Banner';
-import {useNavigation } from 'react-router-dom';
+import { useNavigation } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import './Home.css'
 import OfferCard from '../OfferCard/OfferCard';
@@ -31,14 +31,6 @@ const Home = () => {
 
   }, [])
 
-  if (loader) {
-    return <div className="d-flex justify-content-center mt-5">
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-    </div>
-  }
-
   // console.log(chefData)
   return (
     <div className='container'>
@@ -50,14 +42,23 @@ const Home = () => {
         <Marquee speed={100}>
           <p className='mt-3 text-center fs-5 text-success fw-semibold  '>Need some help deciding what to choose? Take a look at our most popular recipes or check out the latest dishes we have added to the site.</p>
         </Marquee>
-        <div className="row g-4 py-5 mx-auto cart" >
-          {
-            chefData.map(data => <ChefCard
-              data={data}
-              key={data.id}
-            ></ChefCard>)
-          }
-        </div>
+        {
+          loader ? <div className="d-flex justify-content-center mt-5">
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+            :
+            <div className="row g-4 py-5 mx-auto cart" >
+              {
+                chefData.map(data => <ChefCard
+                  data={data}
+                  key={data.id}
+                ></ChefCard>)
+              }
+
+            </div>
+        }
       </div>
       <div className="my-md-5 my-3 py-md-5">
         <h2 className='fw-bold fs-1 text-success text-center'>Hot Deals</h2>
