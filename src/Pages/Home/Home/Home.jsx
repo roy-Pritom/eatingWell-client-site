@@ -1,11 +1,12 @@
 import Banner from '../Banner/Banner';
-import { useLoaderData, useNavigation } from 'react-router-dom';
+import {useNavigation } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import './Home.css'
 import OfferCard from '../OfferCard/OfferCard';
 import LatestNews from '../LatestNews/LatestNews';
 import { Spinner } from 'react-bootstrap';
 import ChefCard from '../ChefCard/ChefCard';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -16,7 +17,28 @@ const Home = () => {
       </Spinner>
     </div>
   }
-  const chefData = useLoaderData();
+
+  const [loader, setLoader] = useState(true)
+  const [chefData, setChefData] = useState([])
+  useEffect(() => {
+    fetch('https://assignment-10-server-site-roy-pritom.vercel.app/data/')
+      .then(res => res.json())
+      .then(data => {
+        setChefData(data)
+        setLoader(false)
+      })
+
+
+  }, [])
+
+  if (loader) {
+    return <div className="d-flex justify-content-center mt-5">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
+  }
+
   // console.log(chefData)
   return (
     <div className='container'>

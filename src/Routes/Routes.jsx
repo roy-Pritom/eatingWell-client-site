@@ -21,8 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        loader: () => fetch('https://assignment-10-server-site-roy-pritom.vercel.app/data/')
+        element: <Home></Home>
       },
       {
         path: '/recipes/:id',

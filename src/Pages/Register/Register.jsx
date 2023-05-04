@@ -10,7 +10,8 @@ const Register = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
-    const { createUser, googleLogin, logOut, gitHubLogIn } = useContext(authContext)
+    const { createUser, googleLogin, logOut, gitHubLogIn,user } = useContext(authContext)
+    console.log({user})
     const navigate = useNavigate();
 
     const handleSignUp = (event) => {
